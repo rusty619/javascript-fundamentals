@@ -14,13 +14,29 @@
 
 // const followingCount = [100,200,300,400]
 
+let tentant1 = {
+    name: 'John Doe',
+    creditScore: 350,
+    salary: 15000,
+    age: 30
+}
+
+let tentant2 = {
+    name: 'Billy John',
+    creditScore: 350,
+    salary: 22000,
+    age: 36
+}
+
+
 let apt1 = {
     bedrooms: 2,
     sqft: 50,
     bathrooms: 3,
     windows: 0,
     rent: 4500,
-    unit: '1A'
+    unit: '1A',
+    tentants: [tentant1]
 }
 
 let apt2 = {
@@ -29,7 +45,8 @@ let apt2 = {
     bathrooms: 1,
     windows: 4,
     rent: 3500,
-    unit: '1B'
+    unit: '1B',
+    tentants: [tentant2]
 }
 
 let apt3 = {
@@ -40,6 +57,16 @@ let apt3 = {
     rent: 6000,
     unit: '2A'
 }
+
+let apt4 = {
+    bedrooms: 0,
+    sqft: 10,
+    bathrooms: 0,
+    windows: 0,
+    rent: 900,
+    unit: '2B'
+}
+
 
 let building = {
     streetAddress: '77 7th street, Brooklyn NY 11232',
