@@ -15,13 +15,14 @@
 // const followingCount = [100,200,300,400]
 
 let apt1 = {
-    bedrooms: 2,
+    bedrooms: 4,
     sqft: 50,
     bathrooms: 3,
     windows: 0,
     rent: 4500,
     unit: '1A',
     lease: function(tentant){
+        if(this.tentants.length === this.bedrooms) return `${this.unit} is already full!`
         this.tentants.push(tentant)
         console.log(tentant.name, 'has rented out', this.unit)
     },
