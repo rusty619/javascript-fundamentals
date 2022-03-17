@@ -21,6 +21,10 @@ let apt1 = {
     windows: 0,
     rent: 4500,
     unit: '1A',
+    lease: function(tentant){
+        this.tentants.push(tentant)
+        console.log(tentant.name, 'has rented out', this.unit)
+    },
     tentants: []
 }
 
