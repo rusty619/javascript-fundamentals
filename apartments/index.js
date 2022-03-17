@@ -58,7 +58,8 @@ let tentant1 = {
     name: 'John Doe',
     creditScore: 350,
     salary: 15000,
-    age: 30
+    age: 30,
+    pet: 'Fido'
 }
 
 let tentant2 = {
@@ -72,9 +73,12 @@ let tentant2 = {
 let building = {
     streetAddress: '77 7th street, Brooklyn NY 11232',
     laundry: false,
-    allowsPets: true,
+    allowsPets: false,
     lease: function (apt,tentant) {
         if (apt.tentants.length === apt.bedrooms) return `${apt.unit} is already full!`
+        if(this.allowedPets === false && tentant.pet) {
+            return `${apt.unit} is available, but you must give ${tentant.pet} up for adoption!`
+        }
         apt.tentants.push(tentant)
         console.log(tentant.name, 'has rented out', apt.unit)
     },
