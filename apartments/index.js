@@ -14,21 +14,6 @@
 
 // const followingCount = [100,200,300,400]
 
-let tentant1 = {
-    name: 'John Doe',
-    creditScore: 350,
-    salary: 15000,
-    age: 30
-}
-
-let tentant2 = {
-    name: 'Billy John',
-    creditScore: 350,
-    salary: 22000,
-    age: 36
-}
-
-
 let apt1 = {
     bedrooms: 2,
     sqft: 50,
@@ -36,7 +21,7 @@ let apt1 = {
     windows: 0,
     rent: 4500,
     unit: '1A',
-    tentants: [tentant1]
+    tentants: []
 }
 
 let apt2 = {
@@ -46,7 +31,7 @@ let apt2 = {
     windows: 4,
     rent: 3500,
     unit: '1B',
-    tentants: [tentant2]
+    tentants: []
 }
 
 let apt3 = {
@@ -55,7 +40,8 @@ let apt3 = {
     bathrooms: 5,
     windows: 10,
     rent: 6000,
-    unit: '2A'
+    unit: '2A',
+    tentants: []
 }
 
 let apt4 = {
@@ -64,7 +50,22 @@ let apt4 = {
     bathrooms: 0,
     windows: 0,
     rent: 900,
-    unit: '2B'
+    unit: '2B',
+    tentants: []
+}
+
+let tentant1 = {
+    name: 'John Doe',
+    creditScore: 350,
+    salary: 15000,
+    age: 30
+}
+
+let tentant2 = {
+    name: 'Billy John',
+    creditScore: 600,
+    salary: 22000,
+    age: 36
 }
 
 
