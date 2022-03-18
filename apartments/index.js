@@ -21,7 +21,7 @@ let apt1 = {
     windows: 0,
     rent: 4500,
     unit: '1A',
-    tentants: []
+    tenants: []
 }
 
 let apt2 = {
@@ -31,7 +31,7 @@ let apt2 = {
     windows: 4,
     rent: 3500,
     unit: '1B',
-    tentants: []
+    tenants: []
 }
 
 let apt3 = {
@@ -41,7 +41,7 @@ let apt3 = {
     windows: 10,
     rent: 6000,
     unit: '2A',
-    tentants: []
+    tenants: []
 }
 
 let apt4 = {
@@ -51,10 +51,10 @@ let apt4 = {
     windows: 0,
     rent: 900,
     unit: '2B',
-    tentants: []
+    tenants: []
 }
 
-let tentant1 = {
+let tenant1 = {
     name: 'John Doe',
     creditScore: 350,
     salary: 15000,
@@ -62,7 +62,7 @@ let tentant1 = {
     pet: 'Fido'
 }
 
-let tentant2 = {
+let tenant2 = {
     name: 'Billy John',
     creditScore: 600,
     salary: 22000,
@@ -74,13 +74,28 @@ let building = {
     streetAddress: '77 7th street, Brooklyn NY 11232',
     laundry: false,
     allowsPets: false,
-    lease: function (apt,tentant) {
-        if (apt.tentants.length === apt.bedrooms) return `${apt.unit} is already full!`
-        if(this.allowedPets === false && tentant.pet) {
-            return `${apt.unit} is available, but you must give ${tentant.pet} up for adoption!`
+    lease: function (apt,tenant) {
+        if (apt.tenants.length === apt.bedrooms) return `${apt.unit} is already full!`
+        if(this.allowedPets === false && tenant.pet) {
+            return `${apt.unit} is available, but you must give ${tenant.pet} up for adoption!`
         }
-        apt.tentants.push(tentant)
-        console.log(tentant.name, 'has rented out', apt.unit)
+        let t = apt.tenants.push(tenant)
+        console.log(tenant.name, 'has rented out', apt.unit)
+        return t
     },
+    occupiedApts: function(){
+        // returns  only the apts which have tenants inside them 
+        // condition to test: apt.tenants.length
+        return this.apartments.filter((apt) => {
+            return apt.tenants.length > 0
+        })
+    },
+    fullApts: function(){
+        // returns only the apts which are completely full
+        // condition to test: apt.tenants.length === apt.bedrooms
+        return this.apartments.filter( (el) => {
+            return el.tenant.length === el.bedrooms
+        })
+    }, 
     apartments:[apt1,apt2,apt3]
 }
