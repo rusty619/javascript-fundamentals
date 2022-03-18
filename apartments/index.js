@@ -94,7 +94,7 @@ let building = {
         // returns only the apts which are completely full
         // condition to test: apt.tenants.length === apt.bedrooms
         return this.apartments.filter( (el) => {
-            return el.tenant.length === el.bedrooms
+            return el.tenants.length === el.bedrooms
         })
     }, 
     apartments:[apt1,apt2,apt3]
