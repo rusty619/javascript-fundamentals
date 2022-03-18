@@ -47,8 +47,23 @@ h1{
     font-weight: 200;
 }
 
+.levitating-card {
+    animation: levitate 1.2s ease-in-out alternate infinite ;
+}
+
 button{
     font-size: 1.8em;
     display: block;
     margin: 0 auto;
+}
+
+@keyframes levitate {
+    from{
+        position: absolute;
+        top: 5%;
+    }
+    to{
+        position: absolute;
+        top: -5%;
+    }
 }

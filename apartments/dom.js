@@ -5,6 +5,7 @@ console.log(cards)
 cards.forEach((card) => {
     card.addEventListener('click', () => {
         card.classList.toggle('transparent')
-        alert('Card was Clicked')
+        //card.classList.toggle('levitating-card')
+        //alert('Card was Clicked')
     })
 })
