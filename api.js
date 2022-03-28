@@ -1,28 +1,28 @@
-// create a function called request
-let data;
-const request = () => {
-    fetch('https://raw.githubusercontent.com/rusty619/javascript-fundamentals/main/user.json')
-    .then((res) => {
-        return res.json()
-    })
-    .then((data) => {
-        console.log("Data returned is", data)
-    })
-    return "Done with This function"
-}
+let div = document.getElementById('container')
 
-// Async Await
-const request2 =  async() => {
-    let req = await fetch('https://raw.githubusercontent.com/rusty619/javascript-fundamentals/main/user.json')
+const request = async ()=> {
+    let req = await fetch('https://raw.githubusercontent.com/rmdashrfv/javascript-fundamentals/main/mock_data.json')
     let res = await req.json()
-    console.log("RESPONSE 2",res)
-    data = res // gets the json object from the url that is in fetch 
-    return res
+    console.log('Response',res)
+    res.forEach((element) => {
+        let img = document.createElement('img')
+        let button = document.createElement('button')
+        let h3 = document.createElement('h3')
+        let h4 = document.createElement('h4')
+        h3.innerText = element.company_name
+        h4.innerText = `Vacancies: ${element.vacancies}`
+        button.innerText = `Rent Building ${element.id}`
+        button.addEventListener('click', () => {
+            let updatedVacancies = --element.vacancies
+            if(updatedVacancies <= -1) return alert("No more VACANCIES");
+            h4.innerText = `Vacancies: ${--element.vacancies}`
+            
+        })
+        img.setAttribute('src', element.photo)
+        div.append(h3,h4, img, button)
+       // div.appendChild(img)
+       // div.appendChild(button)
+    })
 }
 
-request2()
-
-// Fetch
-// return a promise object
-// in order to operate on the promise returned by fetch
-// you need to wait until the oromise resolves
+request()
